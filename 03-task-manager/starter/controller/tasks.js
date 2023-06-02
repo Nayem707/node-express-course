@@ -1,7 +1,7 @@
-const Task = require("../models/Task");
+const Task = require('../models/Task');
 
 const getAllTasks = (req, res) => {
-  res.send("all Tasks");
+  res.send('all Tasks');
 };
 
 const createTasks = async (req, res) => {
@@ -18,11 +18,11 @@ const getTasks = (req, res) => {
 };
 
 const updateTasks = (req, res) => {
-  res.send("update Task");
+  res.send('update Task');
 };
 
 const deleteTasks = (req, res) => {
-  res.send("delete Task");
+  res.send('delete Task');
 };
 
 module.exports = {
