@@ -1,19 +1,19 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 // mongoose here!
-const connectDB = require("./db/connect");
+const connectDB = require('./db/connect');
 //Import Routes here!
-const tasks = require("./routes/task");
-require("dotenv").config();
+const tasks = require('./routes/task');
+require('dotenv').config();
 // middleware here
 app.use(express.json());
 
 //Using routes
-app.get("/", (req, res) => {
-  res.send("Task Manager App");
+app.get('/', (req, res) => {
+  res.send('Task Manager App');
 });
 
-app.use("/api/v1/tasks", tasks);
+app.use('/api/v1/tasks', tasks);
 
 // app.get("/api/v1/tasks");            -get all task
 // app.post("/api/v1/tasks");           -create a new task
@@ -27,7 +27,7 @@ const start = async () => {
   try {
     await connectDB(process.env.MONGO_URL);
     app.listen(port, () => {
-      console.log("server is runing 3000");
+      console.log('server is runing 3000');
     });
   } catch (error) {
     console.log(error);
